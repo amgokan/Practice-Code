@@ -5,7 +5,7 @@ float ay=1;
 void setup() {
   size(700, 700);
   x=350;
- vx=random(-0.3,0.3);
+ vx=2;
   y=350;
 }
 
