@@ -1,6 +1,6 @@
 float x, y;
 float vx, vy;
-float ay=.1;
+float ay=1;
 
 void setup() {
   size(700, 700);
@@ -25,8 +25,11 @@ void draw() {
     vx*=-1;
   }
 
-  if (y>=height-15 || y<=15) {
-    vy*=-1;
+  if (y>=685) {
+    y=685;
+    vy=-abs(vy);
   }
+  
+  
 }
 
