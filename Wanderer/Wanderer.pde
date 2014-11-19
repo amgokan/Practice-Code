@@ -6,7 +6,7 @@ int sz=30;
 
 void setup() {
   
-  background(0);
+ // background(0);
   
   size(700, 700);
   
@@ -19,9 +19,9 @@ void setup() {
 }
 
 void draw() {
-  
-  fill(random(255), random(255), random(255));
-  
+stroke(255,0,0,50);
+  line(l.x, l.y, l.x+(150*v.x), l.y+(150*v.y));
+  stroke(0);
   v.add(a);
   l.add(v);
   
@@ -39,7 +39,7 @@ a.set(random(-.1,.1), random(-.1,.1));
     l.x=width+sz/2;
   }
   if (l.y-sz/2>height) {
-    l.y=-sz;
+    l.y=-sz/2;
   }
   if (l.y+sz/2<0) {
     l.y=height+sz/2;
