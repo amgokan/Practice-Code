@@ -1,43 +1,48 @@
-float x, y;
-float vx, vy;
-float ax, ay;
+PVector l;
+PVector v;
+PVector a;
 
-int sz=100;
+int sz=30;
 
 void setup() {
+  
+  background(0);
+  
   size(700, 700);
-  x=width/2;
-  y=height/2;
-  vx=0;
-  vy=0;
-  ax=-.01;
-  ay=-.01;
+  
+  l=new PVector(width/2, height/2);
+  v=new PVector(0,0);
+  a=new PVector(0,0);  
+  
+  
+
 }
 
 void draw() {
-  ellipse(x, y, sz, sz);
-  vx+=ax;
-  vy+=ay;
-  x+=vx;
-  y+=vy;
+  
+  fill(random(255), random(255), random(255));
+  
+  v.add(a);
+  l.add(v);
+  
+  ellipse(l.x, l.y, sz, sz);
+  
+a.set(random(-.1,.1), random(-.1,.1));
 
-ax=random(-.1,.1);
-ay=random(-.1,.1);
 
-  vx=constrain(vx, -5, 5);
-  vy=constrain(vy, -5, 5);
+ v.limit(2);
 
-  if (x-sz/2>width) {
-    x=-sz/2;
+  if (l.x-sz/2>width) {
+    l.x=-sz/2;
   }
-  if (x+sz/2<0) {
-    x=width+sz/2;
+  if (l.x+sz/2<0) {
+    l.x=width+sz/2;
   }
-  if (y-sz/2>height) {
-    y=-sz;
+  if (l.y-sz/2>height) {
+    l.y=-sz;
   }
-  if (y+sz/2<0) {
-    y=height+sz/2;
+  if (l.y+sz/2<0) {
+    l.y=height+sz/2;
   }
 }
 
