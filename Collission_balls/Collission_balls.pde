@@ -1,27 +1,35 @@
+PVector mouse, circle, vel;
+float sz=100;
+int count=0;
 
-float sz=50;
-
-
-void setup(){
-  size(700,700);
-
-  
-  
+void setup() {
+  size (700, 700);
+  circle= new PVector (width/2, height/2);
+  vel = PVector.random2D();
 }
 
-
-void draw(){
-  
-  PVector mouse= new PVector(mouseX,mouseY);
-PVector circle =  new PVector(350,350);
-  
-  println(mouse.x, mouse.y);
+void draw() {
+  mouse= new PVector (mouseX, mouseY);
   background(0);
-  fill(255);
+  circle.add(vel);
+
   ellipse(circle.x, circle.y, sz, sz);
-  if(dist(mouse.x, mouse.y, circle.x, circle.y)<sz/2){
-   println("FFFFF"); 
+
+  if (circle.dist(mouse)<sz/2) {
+
+    if (circle.x<mouse.x) {
+      vel.x=-abs(vel.x);
+    } else {
+      vel.x=abs(vel.x);
+    }
+    if (circle.y<mouse.y) {
+      vel.y=-abs(vel.y);
+    } else {
+      vel.y=abs(vel.y);
+    }
+
+    count++;
+    println("touch?", count);
   }
-  
-  
 }
+
