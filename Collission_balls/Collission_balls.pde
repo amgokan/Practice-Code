@@ -43,6 +43,27 @@ void draw() {
   
   if (circle.dist(loc2)<(sz/2)+(sz2/2)) {
     println("GGG");
+    if (circle.x<loc2.x) {     
+      //white one is to the left
+      vel.x+=-1;
+      vel2.x*=-1;
+     } 
+    if (loc2.x<=circle.x){
+     //white one is on the right 
+      vel.x+=-1;
+      vel2.x*=-1;
+    }
+    if (circle.y<loc2.y){
+     //white one is on top 
+  vel.y*=-1;
+vel2.y*=-1;  
   }
-}
+    if (loc2.y<=circle.y){
+     //white is on the bottom 
+  vel.y*=-1;
+vel2.y*=-1;
+    }
+    }
+  }
+
 
