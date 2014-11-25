@@ -4,10 +4,6 @@ PVector[] vel = new PVector[count];
 PVector[] acc = new PVector[count];
 float[] siz = new float[count];
 float[] mass = new float[count];
-float[] c1 = new float[count];
-float[] c2 = new float[count];
-float[] c3 = new float[count];
-
 float mindiam = 10;
 float maxdiam = 25;
 
